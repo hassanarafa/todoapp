@@ -16,7 +16,7 @@ class CustomTextFormField extends StatelessWidget {
     return TextFormField(
       onTap: ontap,
       controller: controller,
-      cursorColor: Colors.blue,
+      cursorColor: Colors.brown,
       validator: (value) {
         if (value == null || value.isEmpty) {
           return 'Please enter some text';
