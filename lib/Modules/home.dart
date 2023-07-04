@@ -68,12 +68,14 @@ class HomePage extends StatelessWidget {
                                     children: [
                                       CustomTextFormField(
                                           controller: titleController,
-                                          labelText: "Name"),
+                                          hintText: "Topic"),
                                       const SizedBox(
                                         height: 10,
                                       ),
                                       CustomTextFormField(
-                                        controller: timeController,
+                                        controller: (cubit.sicon == Icons.edit)
+                                            ? null
+                                            : timeController,
                                         ontap: () {
                                           showTimePicker(
                                                   context: context,
@@ -87,7 +89,7 @@ class HomePage extends StatelessWidget {
                                                 .toString());
                                           });
                                         },
-                                        labelText: "Time",
+                                        hintText: "Time",
                                       ),
                                       const SizedBox(
                                         height: 10,
@@ -106,7 +108,7 @@ class HomePage extends StatelessWidget {
                                                     .format(value!);
                                           });
                                         },
-                                        labelText: "Date",
+                                        hintText: "Date",
                                       ),
                                     ],
                                   ),
@@ -123,6 +125,7 @@ class HomePage extends StatelessWidget {
                     child: Icon(cubit.sicon),
                   ),
                   appBar: AppBar(
+                    automaticallyImplyLeading: false,
                     title: Text(cubit.textAppBar[cubit.currentIndex]),
                   ),
                   body: ConditionalBuilder(

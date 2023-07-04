@@ -1,6 +1,6 @@
 import 'package:bloc/bloc.dart';
 import 'package:flutter/material.dart';
-import 'Components/routes.dart';
+import 'package:flutter_application_23/splashview.dart';
 import 'Cubit_Observer.dart';
 
 void main() {
@@ -13,10 +13,10 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp.router(
-      routerConfig: AppRouter.router,
+    return MaterialApp(
       theme: ThemeData(primarySwatch: Colors.brown),
       debugShowCheckedModeBanner: false,
+      home: const Splashview(),
     );
   }
 }

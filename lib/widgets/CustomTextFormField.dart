@@ -6,10 +6,10 @@ class CustomTextFormField extends StatelessWidget {
       {super.key,
       required this.controller,
       this.ontap,
-      required this.labelText});
+      required this.hintText});
   final TextEditingController? controller;
   final void Function()? ontap;
-  final String labelText;
+  final String hintText;
 
   @override
   Widget build(BuildContext context) {
@@ -24,14 +24,13 @@ class CustomTextFormField extends StatelessWidget {
         return null;
       },
       decoration: InputDecoration(
-          prefixIcon: const Icon(Icons.title),
-          labelText: labelText,
+          hintText: hintText,
           filled: true,
           fillColor: Colors.white,
           focusedBorder: OutlineInputBorder(
               borderRadius: BorderRadius.circular(15),
               borderSide: const BorderSide(
-                color: Colors.blue,
+                color: Colors.brown,
               )),
           errorBorder: OutlineInputBorder(
               borderRadius: BorderRadius.circular(15),

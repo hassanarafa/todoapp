@@ -11,6 +11,7 @@ class ConditionBulder extends StatelessWidget {
       condition: tasks.length > 0,
       builder: (context) => ListView.separated(
           itemBuilder: (context, index) => BuildTaskItem(
+                index: index,
                 model: tasks[index],
                 context: context,
               ),
